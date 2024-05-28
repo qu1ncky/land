@@ -114,10 +114,10 @@ const About = () => {
               </Box>
             </Box>
           </Box>
-          <Box sx={{display: {xs: 'none', lg: 'block'}}} width={1} position="relative">
+          <Box sx={{ display: { xs: 'none', xl: 'block' } }} width={1} position="relative">
             <img className={styles.gearLarge} src="src\assets\gear.png" alt="" />
             <img className={styles.gearMid} src="src\assets\gear.png" alt="" />
-            <img className={styles.gearSmall} src="src\assets\gear.png" alt="" /> 
+            <img className={styles.gearSmall} src="src\assets\gear.png" alt="" />
           </Box>
         </Box>
       </Container>
