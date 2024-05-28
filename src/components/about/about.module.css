@@ -1,0 +1,17 @@
+.gearLarge {
+  position: absolute;
+  transform: rotate(180deg) scale(1.1) translateX(-20%) translateY(5%);
+  pointer-events: none;
+}
+
+.gearMid {
+  position: absolute;
+  transform: rotate(0deg) scale(0.65) translateX(80%) translateY(90%);
+  pointer-events: none;
+}
+
+.gearSmall {
+  position: absolute;
+  transform: rotate(30deg) scale(0.42) translateX(100%) translateY(-180%);
+  pointer-events: none;
+}
