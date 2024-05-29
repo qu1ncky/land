@@ -1,4 +1,4 @@
-import { Box, Button, Container, ThemeProvider, Typography } from '@mui/material';
+import { Box, Button, Container, Link, ThemeProvider, Typography } from '@mui/material';
 import { theme } from '../../constants/theme';
 import styles from './about.module.css';
 
@@ -81,31 +81,33 @@ const About = () => {
               mt={5}
               alignItems="center"
               sx={{ flexDirection: { xs: 'column-reverse', md: 'row' } }}>
-              <Button
-                sx={{
-                  mt: { md: 3 },
-                  mb: 7,
-                  mr: { md: 15 },
-                  width: { xs: 1, md: 200 },
-                  boxShadow: 0,
-                  height: 50,
-                  fontWeight: 500,
-                  bgcolor: 'text.secondary',
-                  color: 'text.primary',
-                  transition: 'all 0.3s ease-in-out',
-                  '&:hover': {
-                    bgcolor: 'success.main', // Изменение фона при наведении
-                    color: 'text.secondary', // Изменение цвета текста при наведении
-                  },
-                }}
-                variant="contained">
-                Выбрать тренажер
-              </Button>
+              <Link href="#prices">
+                <Button
+                  sx={{
+                    mt: { md: 3 },
+                    mb: 7,
+                    mr: { md: 15 },
+                    width: { xs: 1, md: 200 },
+                    boxShadow: 0,
+                    height: 50,
+                    fontWeight: 500,
+                    bgcolor: 'text.secondary',
+                    color: 'text.primary',
+                    transition: 'all 0.3s ease-in-out',
+                    '&:hover': {
+                      bgcolor: 'success.main', // Изменение фона при наведении
+                      color: 'text.secondary', // Изменение цвета текста при наведении
+                    },
+                  }}
+                  variant="contained">
+                  Выбрать тренажер
+                </Button>
+              </Link>
               <Box
                 sx={{ alignSelf: { xs: 'flex-start', md: 'center' } }}
                 alignSelf="flex-start"
                 mb={7}>
-                <Typography fontWeight={600} variant="h4" color="success.main">
+                <Typography fontWeight={700} variant="h4" color="success.main">
                   560+
                 </Typography>
                 <Typography fontSize="15px" color="text.secondary" maxWidth={250}>
@@ -115,9 +117,21 @@ const About = () => {
             </Box>
           </Box>
           <Box sx={{ display: { xs: 'none', xl: 'block' } }} width={1} position="relative">
-            <img className={styles.gearLarge} src="src\assets\gear.png" alt="" />
-            <img className={styles.gearMid} src="src\assets\gear.png" alt="" />
-            <img className={styles.gearSmall} src="src\assets\gear.png" alt="" />
+            <img
+              className={styles.gearLarge}
+              src="src\assets\gear.png"
+              alt="Тренажер НОК для подготовки к независимой оценке квалификации"
+            />
+            <img
+              className={styles.gearMid}
+              src="src\assets\gear.png"
+              alt="Тренажер НОК для подготовки к независимой оценке квалификации"
+            />
+            <img
+              className={styles.gearSmall}
+              src="src\assets\gear.png"
+              alt="Тренажер НОК для подготовки к независимой оценке квалификации"
+            />
           </Box>
         </Box>
       </Container>

@@ -13,7 +13,8 @@ export const theme = createTheme({
       secondary: '#FFFFFF', // Вторичный белый
     },
     success: {
-      main: '#2DE28C', // Зеленый
+      // main: '#2DE28C', // Зеленый
+      main: '#FFA726', // Оранжевый
     },
     background: {
       default: '#F7F8F9', // Светло-серый фон
@@ -29,7 +30,7 @@ export const theme = createTheme({
       sm: 600,
       md: 900,
       lg: 1200,
-      xl: 1540,
+      xl: 1545,
     },
   },
 });

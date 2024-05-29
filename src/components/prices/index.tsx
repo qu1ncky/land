@@ -1,8 +1,35 @@
-import { Box, Button, Container, Typography } from '@mui/material';
+import { useState } from 'react';
+import { Box, Button, Container, Modal, Typography, CircularProgress } from '@mui/material';
+import { styled } from '@mui/system';
+
+const Iframe = styled('iframe')({
+  width: '100%',
+  height: '100%',
+  border: 'none',
+});
 
 const Prices = () => {
+  const [open, setOpen] = useState(false);
+  const [url, setUrl] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleOpen = (link: string) => {
+    setUrl(link);
+    setLoading(true);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setLoading(false);
+  };
+
+  const handleIframeLoad = () => {
+    setLoading(false);
+  };
+
   return (
-    <Container>
+    <Container id="prices">
       <Typography
         variant="h3"
         fontWeight={600}
@@ -15,10 +42,11 @@ const Prices = () => {
         <Box
           display="flex"
           alignItems="center"
+          justifyContent="space-between"
           mb={10}
           sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
           <Box width={1} mb={2}>
-            <Typography variant="h5" color="text.primary" mb={2}>
+            <Typography id="construction" variant="h5" color="text.primary" mb={2}>
               Строительство
             </Typography>
             <Box mb={2}>
@@ -39,6 +67,7 @@ const Prices = () => {
               6 000 ₽
             </Typography>
             <Button
+              onClick={() => handleOpen('https://oplatakursov.ru/c78ijp54')}
               sx={{
                 boxShadow: 0,
                 width: { xs: 1, md: 300 },
@@ -47,9 +76,9 @@ const Prices = () => {
                 fontWeight: 500,
                 bgcolor: 'primary.main',
                 color: 'text.secondary',
-                transition: 'all 0.3s ease-in-out', // Плавный переход
+                transition: 'all 0.3s ease-in-out',
                 '&:hover': {
-                  bgcolor: 'success.main', // Изменение фона при наведении
+                  bgcolor: 'success.main',
                 },
               }}>
               Купить
@@ -62,7 +91,7 @@ const Prices = () => {
           mb={10}
           sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
           <Box width={1} mb={2}>
-            <Typography variant="h5" color="text.primary" mb={2}>
+            <Typography id="design" variant="h5" color="text.primary" mb={2}>
               Проектирование
             </Typography>
             <Box mb={2}>
@@ -83,6 +112,7 @@ const Prices = () => {
               6 000 ₽
             </Typography>
             <Button
+              onClick={() => handleOpen('https://oplatakursov.ru/cexaat9n')}
               sx={{
                 boxShadow: 0,
                 width: { xs: 1, md: 300 },
@@ -91,9 +121,9 @@ const Prices = () => {
                 fontWeight: 500,
                 bgcolor: 'primary.main',
                 color: 'text.secondary',
-                transition: 'all 0.3s ease-in-out', // Плавный переход
+                transition: 'all 0.3s ease-in-out',
                 '&:hover': {
-                  bgcolor: 'success.main', // Изменение фона при наведении
+                  bgcolor: 'success.main',
                 },
               }}>
               Купить
@@ -102,7 +132,7 @@ const Prices = () => {
         </Box>
         <Box display="flex" alignItems="center" sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
           <Box width={1} mb={2}>
-            <Typography variant="h5" color="text.primary" mb={2}>
+            <Typography id="engineering-survey" variant="h5" color="text.primary" mb={2}>
               Инженерные изыскания
             </Typography>
             <Box mb={2}>
@@ -123,6 +153,7 @@ const Prices = () => {
               6 000 ₽
             </Typography>
             <Button
+              onClick={() => handleOpen('https://oplatakursov.ru/ca2g9ddp')}
               sx={{
                 boxShadow: 0,
                 width: { xs: 1, md: 300 },
@@ -131,9 +162,9 @@ const Prices = () => {
                 fontWeight: 500,
                 bgcolor: 'primary.main',
                 color: 'text.secondary',
-                transition: 'all 0.3s ease-in-out', // Плавный переход
+                transition: 'all 0.3s ease-in-out',
                 '&:hover': {
-                  bgcolor: 'success.main', // Изменение фона при наведении
+                  bgcolor: 'success.main',
                 },
               }}>
               Купить
@@ -141,6 +172,42 @@ const Prices = () => {
           </Box>
         </Box>
       </Box>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="Оплата НОК тренажера"
+        aria-describedby="Оплата тренажера для подготовки к НОК экзамену">
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', md: '80%', lg: '70%' },
+            height: { xs: '70%', md: '80%', lg: '90%' },
+            bgcolor: 'text.secondary',
+            boxShadow: 24,
+            overflow: 'hidden',
+          }}>
+          {loading && (
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                zIndex: 1,
+              }}>
+              <CircularProgress />
+            </Box>
+          )}
+          <Iframe src={url} onLoad={handleIframeLoad} />
+        </Box>
+      </Modal>
     </Container>
   );
 };

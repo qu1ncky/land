@@ -9,12 +9,17 @@ import {
   Container,
   MenuItem,
   ThemeProvider,
+  Link,
 } from '@mui/material';
 import Button from '@mui/material/Button';
 import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
 import { theme } from '../../constants/theme';
 
-const pages = ['Проектировщикам', 'Строителям', 'Изыскателям', 'Архитекторам'];
+const pages = [
+  { title: 'Проектироващикам', link: '#design' },
+  { title: 'Строителям', link: '#construction' },
+  { title: 'Изыскателям', link: '#engineering-survey' },
+];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -49,7 +54,11 @@ function ResponsiveAppBar() {
               }}>
               LOGO
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: 'flex', md: 'none' },
+              }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -77,9 +86,11 @@ function ResponsiveAppBar() {
                   display: { xs: 'block', md: 'none' },
                 }}>
                 {pages.map((page) => (
-                  <MenuItem href="/" sx={{ mr: 2 }} key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
+                  <Link sx={{ textDecoration: 'none' }} key={page.title} href={page.link}>
+                    <MenuItem sx={{ mr: 2 }} onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">{page.title}</Typography>
+                    </MenuItem>
+                  </Link>
                 ))}
               </Menu>
             </Box>
@@ -101,31 +112,35 @@ function ResponsiveAppBar() {
               }}>
               LOGO
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box
+              sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', bgcolor: 'text.secondary' } }}>
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, mr: 3, color: 'white', display: 'block' }}>
-                  {page}
-                </Button>
+                <Link key={page.title} href={page.link}>
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, mr: 3, color: 'white', display: 'block' }}>
+                    {page.title}
+                  </Button>
+                </Link>
               ))}
             </Box>
-            <Button
-              sx={{
-                boxShadow: 0,
-                fontWeight: 500,
-                bgcolor: 'text.secondary',
-                color: 'text.primary',
-                transition: 'all 0.3s ease-in-out', // Плавный переход
-                '&:hover': {
-                  bgcolor: 'success.main', // Изменение фона при наведении
-                  color: 'text.secondary', // Изменение цвета текста при наведении
-                },
-              }}
-              variant="contained">
-              Купить курс
-            </Button>
+            <Link href="#prices">
+              <Button
+                sx={{
+                  boxShadow: 0,
+                  fontWeight: 500,
+                  bgcolor: 'text.secondary',
+                  color: 'text.primary',
+                  transition: 'all 0.3s ease-in-out', // Плавный переход
+                  '&:hover': {
+                    bgcolor: 'success.main', // Изменение фона при наведении
+                    color: 'text.secondary', // Изменение цвета текста при наведении
+                  },
+                }}
+                variant="contained">
+                Купить курс
+              </Button>
+            </Link>
           </Toolbar>
         </Container>
       </AppBar>

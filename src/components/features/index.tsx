@@ -1,4 +1,4 @@
-import { Box, Button, Container, Divider, Typography } from '@mui/material';
+import { Box, Button, Container, Divider, Link, Typography } from '@mui/material';
 
 const Features = () => {
   return (
@@ -97,23 +97,25 @@ const Features = () => {
           </Box>
         </Box>
       </Box>
-      <Button
-        sx={{
-          mb: 20, 
-          boxShadow: 0,
-          width: {xs: 1, md: 250},
-          height: 50,
-          fontWeight: 500,
-          bgcolor: 'primary.main',
-          color: 'text.secondary',
-          transition: 'all 0.3s ease-in-out', // Плавный переход
-          '&:hover': {
-            bgcolor: 'success.main', // Изменение фона при наведении
-          },
-        }}
-        variant="contained">
-        Попробовать бесплатно
-      </Button>
+      <Link href="https://skilltoday.ru/lwcppenl" target="_blank">
+        <Button
+          sx={{
+            mb: 20,
+            boxShadow: 0,
+            width: { xs: 1, md: 250 },
+            height: 50,
+            fontWeight: 500,
+            bgcolor: 'primary.main',
+            color: 'text.secondary',
+            transition: 'all 0.3s ease-in-out', // Плавный переход
+            '&:hover': {
+              bgcolor: 'success.main', // Изменение фона при наведении
+            },
+          }}
+          variant="contained">
+          Попробовать бесплатно
+        </Button>
+      </Link>
     </Container>
   );
 };
