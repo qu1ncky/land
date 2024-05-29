@@ -1,6 +1,7 @@
 import { Box, Button, Container, Link, ThemeProvider, Typography } from '@mui/material';
 import { theme } from '../../constants/theme';
 import styles from './about.module.css';
+import gearImage from '../../assets/gear.png';
 
 const About = () => {
   return (
@@ -119,17 +120,17 @@ const About = () => {
           <Box sx={{ display: { xs: 'none', xl: 'block' } }} width={1} position="relative">
             <img
               className={styles.gearLarge}
-              src="src\assets\gear.png"
+              src={gearImage}
               alt="Тренажер НОК для подготовки к независимой оценке квалификации"
             />
             <img
               className={styles.gearMid}
-              src="src\assets\gear.png"
+              src={gearImage}
               alt="Тренажер НОК для подготовки к независимой оценке квалификации"
             />
             <img
               className={styles.gearSmall}
-              src="src\assets\gear.png"
+              src={gearImage}
               alt="Тренажер НОК для подготовки к независимой оценке квалификации"
             />
           </Box>
