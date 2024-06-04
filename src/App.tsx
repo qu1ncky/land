@@ -1,12 +1,12 @@
 import { Box } from '@mui/material';
-import About from './components/About';
-import Header from './components/Header';
-import Profits from './components/Profits';
-import Features from './components/Features';
-import Prices from './components/Prices';
-import TargetAudienceBlock from './components/TargetAudienceBlock';
-import Footer from './components/Footer';
-import ExampleBlock from './components/ExampleBlock';
+import About from './components/about';
+import Header from './components/header';
+import Profits from './components/profits';
+import Features from './components/features';
+import Prices from './components/prices';
+import TargetAudienceBlock from './components/target-audience-block';
+import Footer from './components/footer';
+import ExampleBlock from './components/example-block';
 
 export const App = () => {
   return (
