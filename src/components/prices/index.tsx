@@ -67,7 +67,7 @@ const Prices = () => {
               6 000 ₽
             </Typography>
             <Button
-              onClick={() => handleOpen('https://oplatakursov.ru/c78ijp54')}
+              onClick={() => handleOpen('https://skilltoday.ru/pay/shop/m8oUcKZwhwDv')}
               sx={{
                 boxShadow: 0,
                 width: { xs: 1, md: 300 },
@@ -112,7 +112,7 @@ const Prices = () => {
               6 000 ₽
             </Typography>
             <Button
-              onClick={() => handleOpen('https://oplatakursov.ru/cexaat9n')}
+              onClick={() => handleOpen('https://skilltoday.ru/pay/shop/vA9aJcjhToNf')}
               sx={{
                 boxShadow: 0,
                 width: { xs: 1, md: 300 },
@@ -153,7 +153,7 @@ const Prices = () => {
               6 000 ₽
             </Typography>
             <Button
-              onClick={() => handleOpen('https://oplatakursov.ru/ca2g9ddp')}
+              onClick={() => handleOpen('https://skilltoday.ru/pay/shop/JBpXTCqpZpOI')}
               sx={{
                 boxShadow: 0,
                 width: { xs: 1, md: 300 },

@@ -13,7 +13,6 @@ export const theme = createTheme({
       secondary: '#FFFFFF', // Вторичный белый
     },
     success: {
-      // main: '#2DE28C', // Зеленый
       main: '#FFA726', // Оранжевый
     },
     background: {

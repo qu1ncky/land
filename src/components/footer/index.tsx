@@ -80,9 +80,6 @@ const Footer = () => {
           </Link>
         </Box>
       </Box>
-      <Typography color="text.primary" mt={6} textAlign="center">
-        © 2023 SkillToday, All Rights Reserved.
-      </Typography>
     </Container>
   );
 };

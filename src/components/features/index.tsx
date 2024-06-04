@@ -7,7 +7,7 @@ const Features = () => {
         variant="h3"
         fontWeight={600}
         color="text.primary"
-        mt={20}
+        mt={15}
         mb={6}
         sx={{ fontSize: { xs: 32, md: 48 } }}>
         Готовим к сдаче НОК строителей, проектировщиков и изыскателей
@@ -41,7 +41,7 @@ const Features = () => {
             }}>
             <Typography fontWeight={700}>Тренажер</Typography>
             <Divider orientation="vertical" flexItem />
-            <Typography fontWeight={700}>Разбор парктических заданий</Typography>
+            <Typography fontWeight={700}>Разбор практических заданий</Typography>
           </Box>
         </Box>
         <Box width={1}>
@@ -100,7 +100,7 @@ const Features = () => {
       <Link href="https://skilltoday.ru/lwcppenl" target="_blank">
         <Button
           sx={{
-            mb: 20,
+            mb: 15,
             boxShadow: 0,
             width: { xs: 1, md: 250 },
             height: 50,

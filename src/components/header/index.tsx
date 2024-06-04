@@ -8,20 +8,19 @@ import {
   Menu,
   Container,
   MenuItem,
-  ThemeProvider,
+  Button,
   Link,
 } from '@mui/material';
-import Button from '@mui/material/Button';
-import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
-import { theme } from '../../constants/theme';
+import { Menu as MenuIcon } from '@mui/icons-material';
+import { handleScroll } from '../../utils/handleScroll';
 
 const pages = [
-  { title: 'Проектироващикам', link: '#design' },
-  { title: 'Строителям', link: '#construction' },
-  { title: 'Изыскателям', link: '#engineering-survey' },
+  { title: 'Проектировщикам', id: 'design' },
+  { title: 'Строителям', id: 'construction' },
+  { title: 'Изыскателям', id: 'engineering-survey' },
 ];
 
-function ResponsiveAppBar() {
+const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
@@ -33,118 +32,95 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <AppBar position="static">
-        <Container maxWidth="lg">
-          <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
+    <AppBar position="static">
+      <Container maxWidth="lg">
+        <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' },
+            }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit">
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
               sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
+                display: { xs: 'block', md: 'none' },
               }}>
-              LOGO
-            </Typography>
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: 'flex', md: 'none' },
-              }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit">
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' },
-                }}>
-                {pages.map((page) => (
-                  <Link sx={{ textDecoration: 'none' }} key={page.title} href={page.link}>
-                    <MenuItem sx={{ mr: 2 }} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page.title}</Typography>
-                    </MenuItem>
-                  </Link>
-                ))}
-              </Menu>
-            </Box>
-            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-              }}>
-              LOGO
-            </Typography>
-            <Box
-              sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', bgcolor: 'text.secondary' } }}>
               {pages.map((page) => (
-                <Link key={page.title} href={page.link}>
-                  <Button
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 2, mr: 3, color: 'white', display: 'block' }}>
-                    {page.title}
-                  </Button>
-                </Link>
+                <MenuItem
+                  key={page.title}
+                  sx={{ mr: 2 }}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                    handleScroll(page.id);
+                  }}>
+                  <Typography textAlign="center">{page.title}</Typography>
+                </MenuItem>
               ))}
-            </Box>
-            <Link href="#prices">
-              <Button
+            </Menu>
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', bgcolor: 'text.secondary' } }}>
+            {pages.map((page) => (
+              <Link
+                key={page.title}
+                onClick={() => handleScroll(page.id)}
                 sx={{
-                  boxShadow: 0,
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  my: 2,
+                  mr: 3,
                   fontWeight: 500,
-                  bgcolor: 'text.secondary',
-                  color: 'text.primary',
-                  transition: 'all 0.3s ease-in-out', // Плавный переход
+                  color: 'text.secondary',
+                  display: 'block',
+                  transition: 'all 0.3s ease-in-out',
                   '&:hover': {
-                    bgcolor: 'success.main', // Изменение фона при наведении
-                    color: 'text.secondary', // Изменение цвета текста при наведении
+                    color: 'success.main',
                   },
-                }}
-                variant="contained">
-                Купить курс
-              </Button>
-            </Link>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </ThemeProvider>
+                }}>
+                {page.title}
+              </Link>
+            ))}
+          </Box>
+          <Button
+            onClick={() => handleScroll('prices')}
+            sx={{
+              boxShadow: 0,
+              fontWeight: 500,
+              bgcolor: 'text.secondary',
+              color: 'text.primary',
+              transition: 'all 0.3s ease-in-out',
+              '&:hover': {
+                bgcolor: 'success.main',
+                color: 'text.secondary',
+              },
+            }}
+            variant="contained">
+            Купить курс
+          </Button>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
-}
-export default ResponsiveAppBar;
+};
+
+export default Header;

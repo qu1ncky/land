@@ -19,7 +19,7 @@ const TargetAudienceBlock = () => {
         sx={{ fontSize: { xs: 32, md: 48 } }}>
         Кому подойдет этот курс?
       </Typography>
-      <Box display="flex" flexDirection="column" gap={2} mb={20}>
+      <Box display="flex" flexDirection="column" gap={2} mb={15}>
         <Accordion sx={{ bgcolor: 'text.secondary', boxShadow: 0 }}>
           <AccordionSummary
             expandIcon={<ArrowDownwardIcon htmlColor="#2667D3" />}
