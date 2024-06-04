@@ -15,12 +15,6 @@ const Footer = () => {
             Контакты
           </Typography>
           <Box mb={0.5} display="flex" alignItems="center" gap={1}>
-            <Typography fontSize={18}>Телефон:</Typography>
-            <Link fontSize={18} href="tel:+79524539292">
-              +7(952) 453-92-92
-            </Link>
-          </Box>
-          <Box mb={0.5} display="flex" alignItems="center" gap={1}>
             <Typography fontSize={18}>Email:</Typography>
             <Link fontSize={18} href="mailto:skilltoday@mail.ru">
               skilltoday@mail.ru
