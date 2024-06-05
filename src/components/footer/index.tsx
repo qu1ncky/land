@@ -28,7 +28,7 @@ const Footer = () => {
           </Box>
           <Box display="flex" alignItems="center" gap={2}>
             <Typography fontSize={18}>Социальные сети:</Typography>
-            <Link target="_blank" href="https://t.me/evoznikas">
+            <Link target="_blank" href="https://t.me/examnok">
               <TelegramIcon sx={{ transform: 'scale(1.5)', mr: 1 }} htmlColor="primary.main" />
             </Link>
             <Link target="_blank" href="https://wa.me/79051929216">
