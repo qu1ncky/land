@@ -15,9 +15,15 @@ const Footer = () => {
             Контакты
           </Typography>
           <Box mb={0.5} display="flex" alignItems="center" gap={1}>
+            <Typography fontSize={18}>Телефон:</Typography>
+            <Link fontSize={18} href="tel:+79051929216">
+              +7 (905) 192-92-16
+            </Link>
+          </Box>
+          <Box mb={0.5} display="flex" alignItems="center" gap={1}>
             <Typography fontSize={18}>Email:</Typography>
-            <Link fontSize={18} href="mailto:skilltoday@mail.ru">
-              skilltoday@mail.ru
+            <Link fontSize={18} href="mailto:examnok@mail.ru">
+              examnok@mail.ru
             </Link>
           </Box>
           <Box display="flex" alignItems="center" gap={2}>
@@ -25,7 +31,7 @@ const Footer = () => {
             <Link target="_blank" href="https://t.me/evoznikas">
               <TelegramIcon sx={{ transform: 'scale(1.5)', mr: 1 }} htmlColor="primary.main" />
             </Link>
-            <Link target="_blank" href="https://wa.me/79524539292">
+            <Link target="_blank" href="https://wa.me/79051929216">
               <WhatsAppIcon sx={{ transform: 'scale(1.5)' }} htmlColor="primary.main" />
             </Link>
           </Box>

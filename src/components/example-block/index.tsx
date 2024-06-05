@@ -7,9 +7,6 @@ import testExamplePreview from '../../assets/images/testExamplePreview.jpg';
 import taskExamplePreview from '../../assets/images/taksExamplePreview.jpg';
 
 const ExampleBlock = () => {
-  // const testExampleUrl = 'https://www.youtube.com/watch?v=ZHYd1JFLVlg';
-  // const taskExampleUrl = 'https://www.youtube.com/watch?v=yRBg0Xr0T2k';
-
   return (
     <Container>
       <Typography
