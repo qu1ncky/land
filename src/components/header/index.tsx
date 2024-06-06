@@ -9,7 +9,6 @@ import {
   Container,
   MenuItem,
   Button,
-  Link,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { handleScroll } from '../../utils/handleScroll';
@@ -81,7 +80,7 @@ const Header = () => {
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', bgcolor: 'text.secondary' } }}>
             {pages.map((page) => (
-              <Link
+              <Button
                 key={page.title}
                 onClick={() => handleScroll(page.id)}
                 sx={{
@@ -98,7 +97,7 @@ const Header = () => {
                   },
                 }}>
                 {page.title}
-              </Link>
+              </Button>
             ))}
           </Box>
           <Button
