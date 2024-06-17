@@ -67,7 +67,7 @@ const Prices = () => {
               6 000 ₽
             </Typography>
             <Button
-              onClick={() => handleOpen('https://skilltoday.ru/pay/shop/m8oUcKZwhwDv')}
+              onClick={() => handleOpen('https://skilltoday.ru/pay/cmbynaf')}
               sx={{
                 boxShadow: 0,
                 width: { xs: 1, md: 300 },
@@ -85,6 +85,7 @@ const Prices = () => {
             </Button>
           </Box>
         </Box>
+
         <Box
           display="flex"
           alignItems="center"
@@ -92,7 +93,7 @@ const Prices = () => {
           sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
           <Box width={1} mb={2}>
             <Typography id="design" variant="h5" color="text.primary" mb={2}>
-              Проектирование
+              Проектирование (Главный инженер проекта)
             </Typography>
             <Box mb={2}>
               <Typography fontWeight={700} color="primary.main">
@@ -112,7 +113,7 @@ const Prices = () => {
               6 000 ₽
             </Typography>
             <Button
-              onClick={() => handleOpen('https://skilltoday.ru/pay/shop/vA9aJcjhToNf')}
+              onClick={() => handleOpen('https://skilltoday.ru/pay/vjmxzgb')}
               sx={{
                 boxShadow: 0,
                 width: { xs: 1, md: 300 },
@@ -130,6 +131,53 @@ const Prices = () => {
             </Button>
           </Box>
         </Box>
+
+        <Box
+          display="flex"
+          alignItems="center"
+          mb={10}
+          sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
+          <Box width={1} mb={2}>
+            <Typography id="design" variant="h5" color="text.primary" mb={2}>
+              Проектирование (Главный архитектор проекта)
+            </Typography>
+            <Box mb={2}>
+              <Typography fontWeight={700} color="primary.main">
+                450+ вопросов с ответами
+              </Typography>
+              <Typography fontWeight={700} color="primary.main">
+                Пример портфолио
+              </Typography>
+            </Box>
+            <Typography color="text.primary">
+              Каждый вопрос снабжен точным ответом и подробной разъяснительной информацией.
+              Дополнительно, вы получите образец портфолио.
+            </Typography>
+          </Box>
+          <Box width={1} display="flex" flexDirection="column" alignItems="center">
+            <Typography mb={2} fontSize={48} color="primary.main" fontWeight={700}>
+              6 000 ₽
+            </Typography>
+            <Button
+              onClick={() => handleOpen('https://skilltoday.ru/pay/mgvrled')}
+              sx={{
+                boxShadow: 0,
+                width: { xs: 1, md: 300 },
+                fontSize: 18,
+                height: 50,
+                fontWeight: 500,
+                bgcolor: 'primary.main',
+                color: 'text.secondary',
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  bgcolor: 'success.main',
+                },
+              }}>
+              Купить
+            </Button>
+          </Box>
+        </Box>
+
         <Box display="flex" alignItems="center" sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
           <Box width={1} mb={2}>
             <Typography id="engineering-survey" variant="h5" color="text.primary" mb={2}>
@@ -153,7 +201,7 @@ const Prices = () => {
               6 000 ₽
             </Typography>
             <Button
-              onClick={() => handleOpen('https://skilltoday.ru/pay/shop/JBpXTCqpZpOI')}
+              onClick={() => handleOpen('https://skilltoday.ru/pay/sfvotpr')}
               sx={{
                 boxShadow: 0,
                 width: { xs: 1, md: 300 },
