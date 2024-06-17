@@ -18,7 +18,7 @@ const Profits = () => {
         justifyContent="space-between"
         gap={4}
         mb={5}
-        sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
+        sx={{ flexDirection: { xs: 'column', lg: 'row' } }}>
         <Card
           sx={{
             width: 1,
@@ -71,6 +71,24 @@ const Profits = () => {
           <Typography>
             Наши методики основываются на реальных ситуациях и практических заданиях, что позволяет
             максимально приблизить процесс подготовки к реальной сдаче экзамена.
+          </Typography>
+        </Card>
+        <Card
+          sx={{
+            width: 1,
+            p: 4,
+            backgroundColor: 'background.default',
+            transition: 'background-color 0.3s ease',
+            '&:hover': {
+              backgroundColor: 'background.paper',
+            },
+          }}>
+          <Typography mb={3} variant="h5" color="primary.main" fontWeight={600}>
+            Мобильное приложение
+          </Typography>
+          <Typography>
+            С мобильным приложением тренажера все учебные материалы всегда на вашем смартфоне.
+            Готовьтесь где угодно: в пути, в очереди или на перерыве.
           </Typography>
         </Card>
       </Box>
